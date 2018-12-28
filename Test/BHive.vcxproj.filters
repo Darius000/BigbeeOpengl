@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{EFAC8DF2-5B8C-0C8E-64A4-9764D00273EF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{0D23880B-792C-887C-02A8-9E7C6EB0937C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Components">
+      <UniqueIdentifier>{02E6D4E5-EEB3-C8EB-D747-3912C3B4A450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Components\RenderComponents">
+      <UniqueIdentifier>{977D8BDC-0361-9A1C-0C64-C85878C6606D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\GameObjects">
+      <UniqueIdentifier>{80298C9B-ECB4-F95F-F5C5-7C5461D05560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\GameObjects\Cameras">
+      <UniqueIdentifier>{6BCDA303-D704-EC9A-E00E-50BE4CC51294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Rendering">
+      <UniqueIdentifier>{9AE0F8CF-06A1-7406-CFDB-BD833B5BB9E2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Rendering\Mesh">
+      <UniqueIdentifier>{96C63D79-82AA-FECE-EB0A-F921D70DE950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Textures">
+      <UniqueIdentifier>{80B37592-6C16-0537-159C-3DED01DED0B9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BHive\Src\BHive.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Components\ObjectComponent.h">
+      <Filter>Src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\BillboardComponent.h">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\CollisionComponent.h">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\MeshComponent.h">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\ParticleEmitter.h">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\RenderComponent.h">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Components\TransformComponent.h">
+      <Filter>Src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\GameObjects\Cameras\Camera.h">
+      <Filter>Src\GameObjects\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\GameObjects\Cameras\FPSCamera.h">
+      <Filter>Src\GameObjects\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\GameObjects\GameObject.h">
+      <Filter>Src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Image.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Rendering\Mesh\Mesh.h">
+      <Filter>Src\Rendering\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Rendering\Shader.h">
+      <Filter>Src\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\Textures\Texture2D.h">
+      <Filter>Src\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\pch.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BHive\Src\stb_image.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BHive\Src\BHive.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Components\ObjectComponent.cpp">
+      <Filter>Src\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\BillboardComponent.cpp">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\CollisionComponent.cpp">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\MeshComponent.cpp">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\ParticleEmitter.cpp">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\RenderComponent.cpp">
+      <Filter>Src\Components\RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Components\TransformComponent.cpp">
+      <Filter>Src\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\GameObjects\Cameras\Camera.cpp">
+      <Filter>Src\GameObjects\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\GameObjects\Cameras\FPSCamera.cpp">
+      <Filter>Src\GameObjects\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\GameObjects\GameObject.cpp">
+      <Filter>Src\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Rendering\Mesh\Mesh.cpp">
+      <Filter>Src\Rendering\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Rendering\Shader.cpp">
+      <Filter>Src\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\Textures\Texture2D.cpp">
+      <Filter>Src\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\glad.c">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\BHive\Shaders\Billboard.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\Billboard.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\BoundingBox.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\BoundingBox.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\Default.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\Default.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\Light.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\Modified.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\Phong.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\BHive\Shaders\model_loading.fs">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

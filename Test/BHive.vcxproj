@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|Win32">
+      <Configuration>Dist</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F39AD20C-5FAF-FABD-2831-9E1D9404F7EE}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>BHive</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>bin\Debug\</OutDir>
+    <IntDir>obj\Debug\</IntDir>
+    <TargetName>BHive</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>bin\Release\</OutDir>
+    <IntDir>obj\Release\</IntDir>
+    <TargetName>BHive</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>bin\Dist\</OutDir>
+    <IntDir>obj\Dist\</IntDir>
+    <TargetName>BHive</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>BHIVE_WINDOWS;BH_BUILD_DLL;BH_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\ThirdParty\Include;..\BHive\Src;..\BHive\Src\DataTypes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenGL32.lib;assimp-vc140-mt.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\ThirdParty\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>bin\Debug\BHive.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST bin\Debug\BHive.dll\ (xcopy /Q /E /Y /I bin\Debug\BHive.dll ..\bin\Debug-windows-\Test &gt; nul) ELSE (xcopy /Q /Y /I bin\Debug\BHive.dll ..\bin\Debug-windows-\Test &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>BHIVE_WINDOWS;BH_BUILD_DLL;BH_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\ThirdParty\Include;..\BHive\Src;..\BHive\Src\DataTypes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenGL32.lib;assimp-vc140-mt.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\ThirdParty\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>bin\Release\BHive.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST bin\Release\BHive.dll\ (xcopy /Q /E /Y /I bin\Release\BHive.dll ..\bin\Release-windows-\Test &gt; nul) ELSE (xcopy /Q /Y /I bin\Release\BHive.dll ..\bin\Release-windows-\Test &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>BHIVE_WINDOWS;BH_BUILD_DLL;BH_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\ThirdParty\Include;..\BHive\Src;..\BHive\Src\DataTypes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenGL32.lib;assimp-vc140-mt.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\ThirdParty\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>bin\Dist\BHive.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST bin\Dist\BHive.dll\ (xcopy /Q /E /Y /I bin\Dist\BHive.dll ..\bin\Dist-windows-\Test &gt; nul) ELSE (xcopy /Q /Y /I bin\Dist\BHive.dll ..\bin\Dist-windows-\Test &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BHive\Src\BHive.h" />
+    <ClInclude Include="..\BHive\Src\Components\ObjectComponent.h" />
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\BillboardComponent.h" />
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\CollisionComponent.h" />
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\MeshComponent.h" />
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\ParticleEmitter.h" />
+    <ClInclude Include="..\BHive\Src\Components\RenderComponents\RenderComponent.h" />
+    <ClInclude Include="..\BHive\Src\Components\TransformComponent.h" />
+    <ClInclude Include="..\BHive\Src\GameObjects\Cameras\Camera.h" />
+    <ClInclude Include="..\BHive\Src\GameObjects\Cameras\FPSCamera.h" />
+    <ClInclude Include="..\BHive\Src\GameObjects\GameObject.h" />
+    <ClInclude Include="..\BHive\Src\Image.h" />
+    <ClInclude Include="..\BHive\Src\Rendering\Mesh\Mesh.h" />
+    <ClInclude Include="..\BHive\Src\Rendering\Shader.h" />
+    <ClInclude Include="..\BHive\Src\Textures\Texture2D.h" />
+    <ClInclude Include="..\BHive\Src\pch.h" />
+    <ClInclude Include="..\BHive\Src\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BHive\Src\BHive.cpp" />
+    <ClCompile Include="..\BHive\Src\Components\ObjectComponent.cpp" />
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\BillboardComponent.cpp" />
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\CollisionComponent.cpp" />
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\MeshComponent.cpp" />
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\ParticleEmitter.cpp" />
+    <ClCompile Include="..\BHive\Src\Components\RenderComponents\RenderComponent.cpp" />
+    <ClCompile Include="..\BHive\Src\Components\TransformComponent.cpp" />
+    <ClCompile Include="..\BHive\Src\GameObjects\Cameras\Camera.cpp" />
+    <ClCompile Include="..\BHive\Src\GameObjects\Cameras\FPSCamera.cpp" />
+    <ClCompile Include="..\BHive\Src\GameObjects\GameObject.cpp" />
+    <ClCompile Include="..\BHive\Src\Rendering\Mesh\Mesh.cpp" />
+    <ClCompile Include="..\BHive\Src\Rendering\Shader.cpp" />
+    <ClCompile Include="..\BHive\Src\Textures\Texture2D.cpp" />
+    <ClCompile Include="..\BHive\Src\glad.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\BHive\Src\pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\BHive\Shaders\Billboard.fs" />
+    <None Include="..\BHive\Shaders\Billboard.vs" />
+    <None Include="..\BHive\Shaders\BoundingBox.fs" />
+    <None Include="..\BHive\Shaders\BoundingBox.vs" />
+    <None Include="..\BHive\Shaders\Default.fs" />
+    <None Include="..\BHive\Shaders\Default.vs" />
+    <None Include="..\BHive\Shaders\Light.fs" />
+    <None Include="..\BHive\Shaders\Modified.fs" />
+    <None Include="..\BHive\Shaders\Phong.fs" />
+    <None Include="..\BHive\Shaders\model_loading.fs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

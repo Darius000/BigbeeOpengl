@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|Win32">
+      <Configuration>Dist</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F39AD20C-5FAF-FABD-2831-9E1D9404F7EE}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>BHive</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86\BHive\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86\BHive\</IntDir>
+    <TargetName>BHive</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86\BHive\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86\BHive\</IntDir>
+    <TargetName>BHive</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Dist-windows-x86\BHive\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86\BHive\</IntDir>
+    <TargetName>BHive</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>BHIVE_WINDOWS;BH_BUILD_DLL;BH_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\Include;Src;Src\DataTypes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenGL32.lib;assimp-vc140-mt.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>BHIVE_WINDOWS;BH_BUILD_DLL;BH_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\Include;Src;Src\DataTypes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenGL32.lib;assimp-vc140-mt.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>BHIVE_WINDOWS;BH_BUILD_DLL;BH_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\Include;Src;Src\DataTypes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>OpenGL32.lib;assimp-vc140-mt.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\BHive.h" />
+    <ClInclude Include="Src\BHive\UserInterface\Gui.h" />
+    <ClInclude Include="Src\Components\BillboardComponent.h" />
+    <ClInclude Include="Src\Components\CollisionComponent.h" />
+    <ClInclude Include="Src\Components\MeshComponent.h" />
+    <ClInclude Include="Src\Components\ObjectComponent.h" />
+    <ClInclude Include="Src\Components\ParticleEmitter.h" />
+    <ClInclude Include="Src\Components\RenderComponent.h" />
+    <ClInclude Include="Src\Components\TransformComponent.h" />
+    <ClInclude Include="Src\Core\AppWindow.h" />
+    <ClInclude Include="Src\Core\Application.h" />
+    <ClInclude Include="Src\Core\Assets\Asset.h" />
+    <ClInclude Include="Src\Core\Assets\AssetBrowser.h" />
+    <ClInclude Include="Src\Core\Core.h" />
+    <ClInclude Include="Src\Core\Log\Log.h" />
+    <ClInclude Include="Src\Core\Object.h" />
+    <ClInclude Include="Src\Core\Statics.h" />
+    <ClInclude Include="Src\Core\World.h" />
+    <ClInclude Include="Src\DataTypes\FString.h" />
+    <ClInclude Include="Src\DataTypes\Mesh.h" />
+    <ClInclude Include="Src\DataTypes\Shader.h" />
+    <ClInclude Include="Src\DataTypes\Texture2D.h" />
+    <ClInclude Include="Src\DataTypes\VArray.h" />
+    <ClInclude Include="Src\DataTypes\Vector3.h" />
+    <ClInclude Include="Src\EntryPoint.h" />
+    <ClInclude Include="Src\GameObjects\Camera.h" />
+    <ClInclude Include="Src\GameObjects\FPSCamera.h" />
+    <ClInclude Include="Src\GameObjects\GameObject.h" />
+    <ClInclude Include="Src\Image.h" />
+    <ClInclude Include="Src\pch.h" />
+    <ClInclude Include="Src\stb_image.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imconfig.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imgui.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imgui_impl_glfw.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imgui_internal.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imstb_rectpack.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imstb_textedit.h" />
+    <ClInclude Include="vendor\Include\IMGUI\imstb_truetype.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\BHive\UserInterface\Gui.cpp" />
+    <ClCompile Include="Src\Components\BillboardComponent.cpp" />
+    <ClCompile Include="Src\Components\CollisionComponent.cpp" />
+    <ClCompile Include="Src\Components\MeshComponent.cpp" />
+    <ClCompile Include="Src\Components\ObjectComponent.cpp" />
+    <ClCompile Include="Src\Components\ParticleEmitter.cpp" />
+    <ClCompile Include="Src\Components\RenderComponent.cpp" />
+    <ClCompile Include="Src\Components\TransformComponent.cpp" />
+    <ClCompile Include="Src\Core\AppWindow.cpp" />
+    <ClCompile Include="Src\Core\Application.cpp" />
+    <ClCompile Include="Src\Core\Assets\Asset.cpp" />
+    <ClCompile Include="Src\Core\Assets\AssetBrowser.cpp" />
+    <ClCompile Include="Src\Core\Log\Log.cpp" />
+    <ClCompile Include="Src\Core\Object.cpp" />
+    <ClCompile Include="Src\Core\Statics.cpp" />
+    <ClCompile Include="Src\Core\World.cpp" />
+    <ClCompile Include="Src\DataTypes\FString.cpp" />
+    <ClCompile Include="Src\DataTypes\Mesh.cpp" />
+    <ClCompile Include="Src\DataTypes\Shader.cpp" />
+    <ClCompile Include="Src\DataTypes\Texture2D.cpp" />
+    <ClCompile Include="Src\DataTypes\VArray.cpp" />
+    <ClCompile Include="Src\DataTypes\Vector3.cpp" />
+    <ClCompile Include="Src\EntryPoint.cpp" />
+    <ClCompile Include="Src\GameObjects\Camera.cpp" />
+    <ClCompile Include="Src\GameObjects\FPSCamera.cpp" />
+    <ClCompile Include="Src\GameObjects\GameObject.cpp" />
+    <ClCompile Include="Src\glad.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Src\pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\Include\IMGUI\imgui.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\Include\IMGUI\imgui_demo.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\Include\IMGUI\imgui_draw.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\Include\IMGUI\imgui_impl_glfw.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\Include\IMGUI\imgui_impl_opengl3.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\Include\IMGUI\imgui_widgets.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\Billboard.fs" />
+    <None Include="Shaders\Billboard.vs" />
+    <None Include="Shaders\BoundingBox.fs" />
+    <None Include="Shaders\BoundingBox.vs" />
+    <None Include="Shaders\Default.fs" />
+    <None Include="Shaders\Default.vs" />
+    <None Include="Shaders\Light.fs" />
+    <None Include="Shaders\Modified.fs" />
+    <None Include="Shaders\Phong.fs" />
+    <None Include="Shaders\model_loading.fs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
